@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Tracker {
 
-	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		if(args.length != 2) {
