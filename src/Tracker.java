@@ -14,36 +14,9 @@ public class Tracker {
 			return;
 		}
 		
-		String file1 = args[0];
-		String file2 = args[1];
-		
-		List<String> l1 = new ArrayList<>();
-		List<String> l2 = new ArrayList<>();
+		List<String> l1 = load(args[0]);
+		List<String> l2 = load(args[1]);
 		List<String> results = new ArrayList<>();
-		
-		String line;
-		String mac;
-		
-		Scanner sc1 = new Scanner(new File(file1)).useDelimiter("\\n");
-		Scanner sc2 = new Scanner(new File(file2)).useDelimiter("\\n");
-		
-		while(sc1.hasNext()) {
-			//candidate = inFile1.next();
-			line = sc1.nextLine();
-			if(line.length() > 17 && !line.startsWith("BSSID") && !line.startsWith("Station")) {
-				mac = line.substring(0, 17);
-				l1.add(mac);
-			}
-		}
-		
-		while(sc2.hasNext()) {
-			//candidate = inFile1.next();
-			line = sc2.nextLine();
-			if(line.length() > 17 && !line.startsWith("BSSID") && !line.startsWith("Station")) {
-				mac = line.substring(0, 17);
-				l2.add(mac);
-			}
-		}
 		
 		for(String candidate : l1) {
 			if(l2.contains(candidate)) {
@@ -60,8 +33,29 @@ public class Tracker {
 			}
 		}
 		
-		sc1.close();
-		sc2.close();
+	}
+	
+	@SuppressWarnings("resource")
+	public static List<String> load(String filename) throws FileNotFoundException {
+		
+		List<String> list = new ArrayList<>();
+		
+		String line;
+		String mac;
+		
+		Scanner sc = new Scanner(new File(filename)).useDelimiter("\\n");
+		
+		while(sc.hasNext()) {
+			//candidate = inFile1.next();
+			line = sc.nextLine();
+			if(line.length() > 17 && !line.startsWith("BSSID") && !line.startsWith("Station")) {
+				mac = line.substring(0, 17);
+				list.add(mac);
+			}
+		}
+		
+		sc.close();
+		return list;
 	}
 	
 }
