@@ -22,6 +22,8 @@ public class Tracker {
 		String file6 = "LIBtest3.csv";
 		String file7 = "RECtest1.csv";
 		String file8 = "RECtest2.csv";
+		String file9 = "BStest2.csv";
+		String file10 = "BStest3.csv";
 		
 		//MAC addresses
 		List<String> l1 = load(file1);
@@ -32,6 +34,8 @@ public class Tracker {
 		List<String> l6 = load(file6);
 		List<String> l7 = load(file7);
 		List<String> l8 = load(file8);
+		List<String> l9 = load(file9);
+		List<String> l10 = load(file10);
 		
 		//List of MAC addresses found in multiple files
 		Map<String, Set<String>> results = new HashMap<>();
@@ -45,6 +49,8 @@ public class Tracker {
 			compare(l6, candidate, file1, file6, results);
 			compare(l7, candidate, file1, file7, results);
 			compare(l8, candidate, file1, file8, results);
+			compare(l9, candidate, file1, file9, results);
+			compare(l10, candidate, file1, file10, results);
 		}
 		
 		for(String candidate : l2) {
@@ -54,6 +60,8 @@ public class Tracker {
 			compare(l6, candidate, file2, file6, results);
 			compare(l7, candidate, file2, file7, results);
 			compare(l8, candidate, file2, file8, results);
+			compare(l9, candidate, file2, file9, results);
+			compare(l10, candidate, file2, file10, results);
 		}
 		
 		for(String candidate : l3) {
@@ -62,6 +70,8 @@ public class Tracker {
 			compare(l6, candidate, file3, file6, results);
 			compare(l7, candidate, file3, file7, results);
 			compare(l8, candidate, file3, file8, results);
+			compare(l9, candidate, file3, file9, results);
+			compare(l10, candidate, file3, file10, results);
 		}
 		
 		for(String candidate : l4) {
@@ -69,21 +79,38 @@ public class Tracker {
 			compare(l6, candidate, file4, file6, results);
 			compare(l7, candidate, file4, file7, results);
 			compare(l8, candidate, file4, file8, results);
+			compare(l9, candidate, file4, file9, results);
+			compare(l10, candidate, file4, file10, results);
 		}
 		
 		for(String candidate : l5) {
 			compare(l6, candidate, file5, file6, results);
 			compare(l7, candidate, file5, file7, results);
 			compare(l8, candidate, file5, file8, results);
+			compare(l9, candidate, file5, file9, results);
+			compare(l10, candidate, file5, file10, results);
 		}
 		
 		for(String candidate : l6) {
 			compare(l7, candidate, file6, file7, results);
 			compare(l8, candidate, file6, file8, results);
+			compare(l9, candidate, file6, file9, results);
+			compare(l10, candidate, file6, file10, results);
 		}
 		
 		for(String candidate : l7) {
 			compare(l8, candidate, file7, file8, results);
+			compare(l9, candidate, file7, file9, results);
+			compare(l10, candidate, file7, file10, results);
+		}
+		
+		for(String candidate : l8) {
+			compare(l9, candidate, file8, file9, results);
+			compare(l10, candidate, file8, file10, results);
+		}
+		
+		for(String candidate : l9) {
+			compare(l10, candidate, file9, file10, results);
 		}
 		
 		//Output results
