@@ -10,6 +10,7 @@ import java.util.Set;
 
 public class Tracker {
 
+	//Generate a list of which MAC addresses were found in multiple WireShark capture files and output where they were found.
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		//File names
@@ -104,6 +105,7 @@ public class Tracker {
 		}
 	}
 	
+	//Check whether a MAC address from one file is in another.  If it is, add it and the names of the files it was found in to the results list. 
 	public static void compare(List<String> list, String candidate, String file1, String file2, Map<String, Set<String>> results) {
 		if(list.contains(candidate)) {
 			if(results.containsKey(candidate)) {
@@ -117,6 +119,7 @@ public class Tracker {
 		}
 	}
 	
+	//Load MAC addresses from file to List data structure.
 	@SuppressWarnings("resource")
 	public static List<String> load(String filename) throws FileNotFoundException {
 		
