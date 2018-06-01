@@ -22,8 +22,10 @@ public class Tracker {
 		String file6 = "LIBtest3.csv";
 		String file7 = "RECtest1.csv";
 		String file8 = "RECtest2.csv";
-		String file9 = "BStest2.csv";
-		String file10 = "BStest3.csv";
+		String file9 = "RECtest3.csv";
+		String file10 = "BStest1.csv";
+		String file11 = "BStest2.csv";
+		String file12 = "BStest3.csv";
 		
 		//MAC addresses
 		List<String> l1 = load(file1);
@@ -36,6 +38,8 @@ public class Tracker {
 		List<String> l8 = load(file8);
 		List<String> l9 = load(file9);
 		List<String> l10 = load(file10);
+		List<String> l11 = load(file11);
+		List<String> l12 = load(file12);
 		
 		//List of MAC addresses found in multiple files
 		Map<String, Set<String>> results = new HashMap<>();
@@ -51,6 +55,8 @@ public class Tracker {
 			compare(l8, candidate, file1, file8, results);
 			compare(l9, candidate, file1, file9, results);
 			compare(l10, candidate, file1, file10, results);
+			compare(l11, candidate, file1, file11, results);
+			compare(l12, candidate, file1, file12, results);
 		}
 		
 		for(String candidate : l2) {
@@ -62,6 +68,8 @@ public class Tracker {
 			compare(l8, candidate, file2, file8, results);
 			compare(l9, candidate, file2, file9, results);
 			compare(l10, candidate, file2, file10, results);
+			compare(l11, candidate, file2, file11, results);
+			compare(l12, candidate, file2, file12, results);
 		}
 		
 		for(String candidate : l3) {
@@ -72,6 +80,8 @@ public class Tracker {
 			compare(l8, candidate, file3, file8, results);
 			compare(l9, candidate, file3, file9, results);
 			compare(l10, candidate, file3, file10, results);
+			compare(l11, candidate, file3, file11, results);
+			compare(l12, candidate, file3, file12, results);
 		}
 		
 		for(String candidate : l4) {
@@ -81,6 +91,8 @@ public class Tracker {
 			compare(l8, candidate, file4, file8, results);
 			compare(l9, candidate, file4, file9, results);
 			compare(l10, candidate, file4, file10, results);
+			compare(l11, candidate, file4, file11, results);
+			compare(l12, candidate, file4, file12, results);
 		}
 		
 		for(String candidate : l5) {
@@ -89,6 +101,8 @@ public class Tracker {
 			compare(l8, candidate, file5, file8, results);
 			compare(l9, candidate, file5, file9, results);
 			compare(l10, candidate, file5, file10, results);
+			compare(l11, candidate, file5, file11, results);
+			compare(l12, candidate, file5, file12, results);
 		}
 		
 		for(String candidate : l6) {
@@ -96,21 +110,38 @@ public class Tracker {
 			compare(l8, candidate, file6, file8, results);
 			compare(l9, candidate, file6, file9, results);
 			compare(l10, candidate, file6, file10, results);
+			compare(l11, candidate, file6, file11, results);
+			compare(l12, candidate, file6, file12, results);
 		}
 		
 		for(String candidate : l7) {
 			compare(l8, candidate, file7, file8, results);
 			compare(l9, candidate, file7, file9, results);
 			compare(l10, candidate, file7, file10, results);
+			compare(l11, candidate, file7, file11, results);
+			compare(l12, candidate, file7, file12, results);
 		}
 		
 		for(String candidate : l8) {
 			compare(l9, candidate, file8, file9, results);
 			compare(l10, candidate, file8, file10, results);
+			compare(l11, candidate, file8, file11, results);
+			compare(l12, candidate, file8, file12, results);
 		}
 		
 		for(String candidate : l9) {
 			compare(l10, candidate, file9, file10, results);
+			compare(l11, candidate, file9, file11, results);
+			compare(l12, candidate, file9, file12, results);
+		}
+		
+		for(String candidate : l10) {
+			compare(l11, candidate, file10, file11, results);
+			compare(l12, candidate, file10, file12, results);
+		}
+		
+		for(String candidate : l11) {
+			compare(l12, candidate, file11, file12, results);
 		}
 		
 		//Output results
