@@ -1,5 +1,5 @@
-// CS498 Wireshark Capture Analysis
-// Keith Cook, Spring 2018
+// Wireshark Capture Analyzer
+// Keith Cook
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -59,6 +59,7 @@ public class Tracker {
 		Map<String, Set<String>> results = new HashMap<>();
 		
 		//Check each MAC address in each file
+		//I got lazy here, if I was going to use this for more than one day I should have abstracted this into a single loop.
 		for(String candidate : l1) {
 			compare(l2, candidate, file1, file2, results);
 			compare(l3, candidate, file1, file3, results);
